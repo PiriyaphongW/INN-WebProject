@@ -2,136 +2,800 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 
-    <!--GoogleFont -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <!--GoogleFont -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Owlcarousel-CSS-->
-    <link rel="stylesheet" href="/js/owl.carousel.min.css">
-    <link rel="stylesheet" href="/js/owl.theme.default.min.css">
-    <title>INN News</title>
+  <!-- Owlcarousel-CSS-->
+  <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+  <title>INN News</title>
 
 </head>
 
 <body>
-    <div class="container-fluid">
-        <header class="nav-mobile ">
-            <div class="nav-mobile-content ">
-                <div class="nav-mobile-left">
-                    <div class="nav-mobile-logo">
-                        <a href="">
-                            <img src="/assets/nav/mobile-logo.png" alt="">
-                        </a>
-                    </div>
+  <div class="container-fluid">
+    <nav class="nav-mobile d-block d-lg-none">
+      <div id="navMobileBody " class="nav-mobile-body">
+        <div   class="nav-mobile-content ">
+          <div class="nav-mobile-left">
+            <div class="nav-mobile-logo">
+              <a href="">
+                <img src="/assets/nav/mobile-logo.png" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="nav-mobile-right">
+            <!-- Search Icon Button   -->
+            <div class="nav-mobile-search">
+              <img id="searchMain" data-bs-toggle="collapse" data-bs-target="#openSearch"
+                src="/assets/nav/mobile-search-white.svg " alt="">
+            </div>
+            <!-- Close Hamburger Button-->
+            <div class="nav-mobile-toggle">
+              <div id="mobile-toggle-open" data-bs-toggle="collapse" data-bs-target="#openToggle">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="topicMenu" class="topic-mobile accordion ">
+          <div id="openSearch" class="collapse" data-bs-parent="#topicMenu">
+            <div class=" topicSearch ">
+              <h1 class="text-white text-center">ค้นหา</h1>
+              <div class="mobile-search-content  ">
+                <div class="search-form  ">
+                  <img src="/assets/nav/search-blue-icon.svg" alt="">
+                  <div class="search-input">
+                    <input type="email" class="form-control">
+                  </div>
+                  <span>ยกเลิก</span>
                 </div>
-                <div class="nav-mobile-right">
-                    <div class="nav-mobile-search">
-                        <img  onclick="search(this)" src="/assets/nav/mobile-seacrh.png" alt=""> 
-                    </div>
-                    <div class="nav-mobile-toggle">
-                        <img id="mobile-toggle-open" class="" onclick="opentopic(this)" src="/assets/nav/hamburger.png"
-                            alt="">
-                        <img id="mobile-toggle-close" class="d-none" onclick="closetopic(this)"
-                            src="/assets/nav/mobile-close-svg.svg" alt="">
-                    </div>
+              </div>
+              <div class="search-mobile-follow">
+                <h3 class="text-white">ติดตามข่าวสารได้ที่</h3>
+                <div class="topic-mobile-social">
+                  <ul class="list-unstyled ">
+                    <li><a href=""><img src="/assets/social-icon/facebook.png" alt=""></a></li>
+                    <li><a href=""><img src="/assets/social-icon/youtube.png" alt=""></a></li>
+                    <li><a href=""><img src="/assets/social-icon/twitter.png" alt=""></a></li>
+                    <li><a href=""><img src="/assets/social-icon/tiktok.png" alt=""></a></li>
+                  </ul>
                 </div>
+              </div>
             </div>
-            <div class="topic-mobile">
-                    <div id="topic-mobile-search" class="mobile-search-content d-none ">
-                        <h1></h1>
-                        <div class="search-form">
-                            <img src="/assets/nav/search-blue-icon.svg" alt="">
-                            <div class="search-input" >                                 
-                                <input type="email" class="form-control"  >                                  
-                             </div>                              
-                        <span>ยกเลิก</span>
-                        </div>
-                    </div>
-                    <div  id="mobile-topic" class="topic-mobile-list d-none ">
-                        <ul class=" list-topic">
-                            <li><a href="">ข่าว</a></li>
-                            <li><a href="">บันเทิง</a></li>
-                            <li><a href="">ไลฟ์สไตล์</a></li>
-                            <li><a href="">การเงิน</a></li>
-                            <li><a href="">ดวง</a></li>
-                            <li><a href="">ลอตเตอรี่</a></li>
-                            <li><a href="">E-Sport</a></li>
-                            <li><a href="">Podcast</a></li>
-                            <li><a href="">Video</a></li>
-                        </ul>
-                        <div class="topic-mobile-follow">
-                            <h3>ติดตามข่าวสารได้ที่</h3>
-                            <div class="topic-mobile-social">
-                                <ul>
-                                    <li><a href=""><img src="/assets/social-icon/facebook.png" alt=""></a></li>
-                                    <li><a href=""><img src="/assets/social-icon/youtube.png" alt=""></a></li>
-                                    <li><a href=""><img src="/assets/social-icon/twitter.png" alt=""></a></li>
-                                    <li><a href=""><img src="/assets/social-icon/tiktok.png" alt=""></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topic-mobile-follow d-none">
-                        <h3>ติดตามข่าวสารได้ที่</h3>
-                        <div class="topic-mobile-social">
-                            <ul>
-                                <li><a href=""><img src="/assets/social-icon/facebook.png" alt=""></a></li>
-                                <li><a href=""><img src="/assets/social-icon/youtube.png" alt=""></a></li>
-                                <li><a href=""><img src="/assets/social-icon/twitter.png" alt=""></a></li>
-                                <li><a href=""><img src="/assets/social-icon/tiktok.png" alt=""></a></li>
-                            </ul>
-                        </div>
-                    </div>
+          </div>
+          <div id="openToggle" class="collapse  " data-bs-parent="#topicMenu">
+            <div class="topic-mobile-list  bg-white">
+              <ul class="list-topic">
+                <li><a href="#" onclick="listTopic1(this)">ข่าว</a></li>
+                <li><a href="#" onclick="listTopic2(this)">บันเทิง</a></li>
+                <li><a href="#" onclick="listTopic3(this)">ไลฟ์สไตล์</a></li>
+                <li><a href="#" onclick="listTopic4(this)">การเงิน</a></li>
+                <li><a href="#" onclick="listTopic5(this)">ดวง</a></li>
+                <li><a href="#" onclick="listTopic6(this)">ลอตเตอรี่</a></li>
+                <li><a href="#" onclick="listTopic7(this)">E-Sport</a></li>
+                <li><a href="#" onclick="listTopic8(this)">Podcast</a></li>
+                <li><a href="#" onclick="listTopic9(this)">Video</a></li>
+              </ul>
+              <div class="topic-mobile-follow text-center">
+                <h3>ติดตามข่าวสารได้ที่</h3>
+                <div class="topic-mobile-social">
+                  <ul class="ps-0 ">
+                    <li><a href=""><img src="/assets/social-icon/facebook.png" alt=""></a></li>
+                    <li><a href=""><img src="/assets/social-icon/youtube.png" alt=""></a></li>
+                    <li><a href=""><img src="/assets/social-icon/twitter.png" alt=""></a></li>
+                    <li><a href=""><img src="/assets/social-icon/tiktok.png" alt=""></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div id="mobile-follow" class="topic-mobile-follow d-none">
+                      <h3>ติดตามข่าวสารได้ที่</h3>
+                      <div class="topic-mobile-social">
+                          <ul>
+                              <li><a href=""><img src="/assets/social-icon/facebook.png" alt=""></a></li>
+                              <li><a href=""><img src="/assets/social-icon/youtube.png" alt=""></a></li>
+                              <li><a href=""><img src="/assets/social-icon/twitter.png" alt=""></a></li>
+                              <li><a href=""><img src="/assets/social-icon/tiktok.png" alt=""></a></li>
+                          </ul>
+                      </div>
+                  </div> -->
+        </div>
+      </div>  
+      <div id="subListTopic" class="sub-list-topic d-none p-0" >
+        <div class="nav-sub-list-title  ps-5 d-flex align-items-baseline">
+          <h1 class="text-white m-0 fs-5" onclick="subList(this)">Back</h1>
+        </div>
+        <div class="sub-list-topic-body bg-white ">
+          <ul class="sub-list-topic-content m-0 ">
+            <li id="subList1" class="list-unstyled d-none">
+              <a class="text-decoration-none" href="">ข่าว</a>
+              <ul class="text-decoration-none list-unstyled">
+                <li><a href="">พระราชสำนัก</a></li>
+                <li><a href="">ทั่วไป</a></li>
+                <li><a href="">การเมือง</a></li>
+                <li><a href="">เศรษฐกิจ</a></li>
+                <li><a href="">กีฬา</a></li>
+                <li><a href="">ต่างประเทศ</a></li>
+                <li><a href="">Tech</a></li>
+                <li><a href="">ภูมิภาค</a></li>
+                <li><a href="">อาชญากรรม</a></li>
+              </ul>
+            </li>
+            <li id="subList2" class="list-unstyled d-none">
+              <a href="">บันเทิง</a>
+              <ul class="text-decoration-none list-unstyled">
+                <li><a href="">HotNews</a></li>
+                <li><a href="">บันเทิงไทย</a></li>
+                <li><a href="">บันเทิงสากล</a></li>
+                <li><a href="">เพลง</a></li>
+                <li><a href="">หนัง</a></li>
+                <li><a href="">ซีรีย์</a></li> 
+              </ul>
+            </li>
+            <li id="subList3" class="list-unstyled d-none">
+              <a href="">ไลฟ์สไตล์</a>
+              <ul class="text-decoration-none list-unstyled">
+                <li><a href="">ท่องเที่ยว</a></li>
+                <li><a href="">อาหาร</a></li>
+                <li><a href="">สุขภาพ</a></li>
+                <li><a href="">บิวตี้</a></li>
+                <li><a href="">ช้อปปิ้ง</a></li>
+                <li><a href="">โปรโมชั่น</a></li>
+                <li><a href="">Local Vlog</a></li>
+              </ul>
+            </li>
+            <li id="subList4" class="list-unstyled d-none">
+              <a href="">การเงิน</a>
+              <ul class="text-decoration-none list-unstyled">
+                 <li><a href="">การเงิน</a></li>
+                 <li><a href="">หุ้น</a></li>
+                 <li><a href="">ทองคำ</a></li>
+                 <li><a href="">น้ำมัน</a></li> 
+              </ul>
+            </li>
+            <li id="subList5" class="list-unstyled d-none">
+              <a href="">ดวง</a>
+              <ul class="text-decoration-none list-unstyled">
+                 <li><a href="">ดวง</a></li>
+                 <li><a href="">ปาฏิหาริย์</a></li>
+                 <li><a href="">ฮวงจุ้ย</a></li> 
+              </ul>
+            </li>
+            <li id="subList6" class="list-unstyled d-none">
+              <a href="">ลอตเตอรี่</a>
+              <ul class="text-decoration-none list-unstyled">
+                <li><a href="">ข่าว</a></li>
+                <li><a href="">บทความแนะนำ</a></li> 
+              </ul>
+            </li>
+            <li id="subList7" class="list-unstyled d-none">
+              <a href="">E-Sport </a>
+              <ul class="text-decoration-none list-unstyled">
+                <li><a href="">ข่าวสาร</a></li>
+                <li><a href="">คอนเทนต์</a></li>
+                <li><a href="">รีวิว</a></li> 
+              </ul>
+            </li>
+            <li id="subList8" class="list-unstyled d-none">
+              <a href="">Podcast</a>
+              <ul class="text-decoration-none list-unstyled">
+                <li><a href="">Trending</a></li>
+                <li><a href="">ทั่วไป</a></li> 
+              </ul>
+            </li>
+            <li id="subList9" class="list-unstyled d-none">
+              <a href="">Video</a>
+              <ul class="text-decoration-none list-unstyled">
+                 <li><a href="">Hot Clips</a></li>
+                 <li><a href="">คลิปเด่น Social</a></li>
+                 <li><a href="">คลิปข่าวทั่วไป</a></li>
+                 <li><a href="">คลิปข่าวต้นชั่วโมง</a></li>
+                 <li><a href="">News Round Up</a></li>
+                 <li><a href="">สัมภาษณ์พิเศษ</a></li> 
+              </ul>
+            </li>
+          </ul>
+          <div class="topic-mobile-follow mt-4 text-center">
+            <h3>ติดตามข่าวสารได้ที่</h3>
+            <div class="topic-mobile-social">
+              <ul class="ps-0 list-unstyled">
+                <li><a href=""><img src="/assets/social-icon/facebook.png" alt=""></a></li>
+                <li><a href=""><img src="/assets/social-icon/youtube.png" alt=""></a></li>
+                <li><a href=""><img src="/assets/social-icon/twitter.png" alt=""></a></li>
+                <li><a href=""><img src="/assets/social-icon/tiktok.png" alt=""></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </nav>
 
 
-            </div>
-        </header>
+    <nav class="navbar-desktop  ps-5 pe-5  d-none d-lg-block position-sticky top-0 navbar     ">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="#">
+          <img src="/assets/nav/desktop-logo.png " alt="">
+        </a>         
+        <div class="navbar-desktop-topic">
+           ข่าว 
+          <ul>
+            <li><a href="">พระราชสำนัก</a></li>
+            <li><a href="">ทั่วไป</a></li>
+            <li><a href="">การเมือง</a></li>
+            <li><a href="">เศรษฐกิจ</a></li>
+            <li><a href="">กีฬา</a></li>
+            <li><a href="">ต่างประเทศ</a></li>
+            <li><a href="">Tech</a></li>
+            <li><a href="">ภูมิภาค</a></li>
+            <li><a href="">อาชญากรรม</a></li>
+          </ul>
+        </div> 
+        <div class="navbar-desktop-topic  ">
+           บันเทิง 
+          <ul>
+            <li><a href="">Hot News</a></li>
+            <li><a href="">บันเทิงไทย</a></li>
+            <li><a href="">บันเทิงสากล</a></li>
+            <li><a href="">เพลง</a></li>
+            <li><a href="">หนัง</a></li>
+            <li><a href="">ซีรีย์</a></li>
+          </ul>
+        </div> 
+        <div class="navbar-desktop-topic">
+          ไลฟ์สไตล์ 
+          <ul>
+            <li><a href="">ท่องเที่ยว</a></li>
+            <li><a href="">อาหาร</a></li>
+            <li><a href="">สุขภาพ</a></li>
+            <li><a href="">บิวตี้</a></li>
+            <li><a href="">ช้อปปิ้ง</a></li>
+            <li><a href="">โปรโมชั่น</a></li>
+            <li><a href="">Local Viog</a></li>
+          </ul>
+        </div> 
+        <div class="navbar-desktop-topic">
+           การเงิน 
+          <ul>
+            <li><a href="">การเงิน</a></li>
+            <li><a href="">หุ้น</a></li>
+            <li><a href="">ทองคำ</a></li>
+            <li><a href="">น้ำมัน</a></li> 
+          </ul>
+        </div> 
+        <div class="navbar-desktop-topic">
+           ดวง 
+          <ul>
+            <li><a href="">ดวง</a></li>
+            <li><a href="">ปาฏิหาริย์</a></li>
+            <li><a href="">ฮวงจุ้ย</a></li> 
+          </ul>
+        </div> 
+        <div class="navbar-desktop-topic">
+          ลอตเตอรี่ 
+          <ul>
+            <li><a href="">ข่าว</a></li>
+            <li><a href="">บทความแนะนำ</a></li> 
+          </ul>
+        </div> 
+        <div class="navbar-desktop-topic">
+           E-Sport 
+          <ul>
+            <li><a href="">ข่าวสาร</a></li>
+            <li><a href="">คอนเทนต์</a></li> 
+            <li><a href="">รีวิว</a></li> 
+          </ul>
+        </div> 
+        <div class="navbar-desktop-topic">
+           Podcast 
+          <ul>
+            <li><a href="">Trending</a></li>
+            <li><a href="">ทั่วไป</a></li> 
+          </ul>
+        </div> 
+        <div class="navbar-desktop-topic">
+           Video 
+          <ul>
+            <li><a href="">Hot Clips</a></li>
+            <li><a href="">คลิปเด่น Social</a></li> 
+            <li><a href="">คลิปข่าวทั่วไป</a></li>
+            <li><a href="">คลิปข่าวต้นชั่วโมง</a></li>
+            <li><a href="">News Round Up</a></li>
+            <li><a href="">สัมภาษณ์พิเศษ</a></li> 
+          </ul>
+        </div> 
+         
+        <img src="/assets/nav/desktop-search.png" alt="">
+      </div>
+    </nav>
 
+    <div class="slide-first">
+      <div class="owl-carousel  owl-theme owl-carousel-first">
+        <div><img
+            src="https://www.innnews.co.th/wp-content/uploads/2022/03/Banner_TMRW_%E0%B9%80%E0%B8%95%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B9%83%E0%B8%88%E0%B8%A7%E0%B8%B1%E0%B8%A2%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B1%E0%B8%9A-5-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%A2%E0%B9%88%E0%B9%81%E0%B8%99%E0%B9%88%E0%B8%96%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B5%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2.png"
+            alt=""></div>
+        <div><img
+            src="https://www.innnews.co.th/wp-content/uploads/2022/03/Banner_TMRW_%E0%B9%80%E0%B8%95%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B9%83%E0%B8%88%E0%B8%A7%E0%B8%B1%E0%B8%A2%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B1%E0%B8%9A-5-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%A2%E0%B9%88%E0%B9%81%E0%B8%99%E0%B9%88%E0%B8%96%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B5%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2.png"
+            alt=""></div>
+        <div><img
+            src="https://www.innnews.co.th/wp-content/uploads/2022/03/Banner_TMRW_%E0%B9%80%E0%B8%95%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B9%83%E0%B8%88%E0%B8%A7%E0%B8%B1%E0%B8%A2%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B1%E0%B8%9A-5-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%A2%E0%B9%88%E0%B9%81%E0%B8%99%E0%B9%88%E0%B8%96%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B5%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2.png"
+            alt=""></div>
 
-        <header class="nav-desktop d-none container-fluid">
-            <div class="nav-desktop-logo">
-                <a href=""><img src="/assets/nav/logo.png" alt=""></a>
-            </div>
-            <div class="nav-desktop-topic">
-                <ul>
-                    <li><a href="">ข่าว</a></li>
-                    <li><a href="">บันเทิง</a></li>
-                    <li><a href="">ไลฟ์สไตล์</a></li>
-                    <li><a href="">การเงิน</a></li>
-                    <li><a href="">ดวง</a></li>
-                    <li><a href="">ลอตเตอรี่</a></li>
-                    <li><a href="">E-Sport</a></li>
-                    <li><a href="">Podcast</a></li>
-                    <li><a href="">Video</a></li>
-                </ul>
-            </div>
-            <div class="nav-desktop-search">
-                <span>
-                    <img src="/assets/nav/search-icon.png" alt="">
-                </span>
-            </div>
-        </header>
+      </div>
     </div>
+    <div class="slide-second d-lg-none container  ps-3 pe-4  ">
+      <div class="owl-carousel  owl-theme owl-carousel-second ">
+        <div class="w-100  ">
+          <a class="text-decoration-none text-white  " href="">
+            <img src="assets/slide-img/slide-second/slide-second-img.svg" alt="">
+            <div class="slide-second-content position-relative ">
+              <p class="text-center m-0">“อัจฉริยะ” ร้อง ปปป. เอาผิด 2 นายพลคุมคดีแตงโม</p>
+              <span>ข่าว</span>
+            </div>
+          </a>
+        </div>
+        <div class="w-100  ">
+          <a class="text-decoration-none text-white" href="">
+            <img src="assets/slide-img/slide-second/slide-second-img.svg" alt="">
+            <div class="slide-second-content position-relative ">
+              <p class="text-center m-0">“อัจฉริยะ” ร้อง ปปป. เอาผิด 2 นายพลคุมคดีแตงโม</p>
+              <span>ข่าว</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container ">
+      <div class="row desktop-news d-none d-lg-block">
+        <div class="d-flex gap-3">
+          <div class="col-6 desktop-news-left">
+            <div class="">
+              <a class="text-decoration-none text-white" href="">
+                <img class="w-100 " src="assets/slide-img/slide-second/desktop/main-img.png " alt="">
+                <div class="position-relative fw-bold">
+                  <p class="m-0">“อัจฉริยะ” ร้อง ปปป. เอาผิด 2 นายพลคุมคดีแตงโม</p>
+                  <span class="fw-lighter ">ข่าว</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 desktop-news-right d-flex flex-column gap-2">
+            <div class="desktop-news-right-item">
+              <a class="text-decoration-none d-flex   " href="">
+                <img src="assets/slide-img/slide-second/desktop/sub-img1.png " alt="">
+                <div class="ps-2 ">
+                  <p class="m-0">สรุปดราม่า จอห์นนี่ เดปป์ ฟ้องหมิ่น แอมเบอร์ เฮิร์ด เส้นทางรักร้าวสู่รักฉาวในชั้นศาล
+                  </p>
+                  <span>บันเทิง</span>
+                </div>
+              </a>
+            </div>
+            <div class="desktop-news-right-item">
+              <a class="text-decoration-none d-flex   " href="">
+                <img src="assets/slide-img/slide-second/desktop/sub-img1.png " alt="">
+                <div class="ps-2 ">
+                  <p class="m-0">สรุปดราม่า จอห์นนี่ เดปป์ ฟ้องหมิ่น แอมเบอร์ เฮิร์ด เส้นทางรักร้าวสู่รักฉาวในชั้นศาล
+                  </p>
+                  <span>บันเทิง</span>
+                </div>
+              </a>
+            </div>
+            <div class="desktop-news-right-item">
+              <a class="text-decoration-none d-flex   " href="">
+                <img src="assets/slide-img/slide-second/desktop/sub-img1.png " alt="">
+                <div class="ps-2 ">
+                  <p class="m-0">สรุปดราม่า จอห์นนี่ เดปป์ ฟ้องหมิ่น แอมเบอร์ เฮิร์ด เส้นทางรักร้าวสู่รักฉาวในชั้นศาล
+                  </p>
+                  <span>บันเทิง</span>
+                </div>
+              </a>
+            </div>
+            <div class="desktop-news-right-item">
+              <a class="text-decoration-none d-flex   " href="">
+                <img src="assets/slide-img/slide-second/desktop/sub-img1.png " alt="">
+                <div class="ps-2 ">
+                  <p class="m-0">สรุปดราม่า จอห์นนี่ เดปป์ ฟ้องหมิ่น แอมเบอร์ เฮิร์ด เส้นทางรักร้าวสู่รักฉาวในชั้นศาล
+                  </p>
+                  <span>บันเทิง</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="latest-news mb-4 d-none d-lg-block ">
+        <div class="latest-news-title pb-3">
+          <h1 class="fw-bold fs-2 ">ข่าวล่าสุด</h1>
+        </div>
+        <div class="row latest-news-body ps-4 d-flex">
+          <div class="col-lg-3 latest-news-item">
+            <div class="latest-news-item-img">
+              <a href=""><img src="/assets/latest-news/news.png" alt=""> </a>
+            </div>
+            <div class="latest-news-item-description">
+              <span class="bg-danger text-white ">ข่าว</span>
+              <p>ราชทัณ์ จ่อลงดาบ เรือนจำจัดซื้ออาหาร ไม่โปร่งใส</p>
+            </div>
+          </div>
+          <div class="col-lg-3 latest-news-item">
+            <div class="latest-news-item-img">
+              <a href=""><img src="/assets/latest-news/entertainment.png" alt=""> </a>
+            </div>
+            <div class="latest-news-item-description">
+              <span>บันเทิง</span>
+              <p>พนักงานออฟฟิศรุ่นใหม่ ใช้เงินยังไงให้คุ้มและฉลาด</p>
+            </div>
+          </div>
+          <div class="col-lg-3 latest-news-item">
+            <div class="latest-news-item-img">
+              <a href=""><img src="/assets/latest-news/finance.png" alt=""> </a>
+            </div>
+            <div class="latest-news-item-description">
+              <span>การเงิน</span>
+              <p>NFT ทวิตแรกทำกำไรไม่ได้!! </p>
+            </div>
+          </div>
+          <div class="col-lg-3 latest-news-item">
+            <div class="latest-news-item-img">
+              <a href=""><img src="/assets/latest-news/liftstyle.png" alt=""> </a>
+            </div>
+            <div class="latest-news-item-description">
+              <span>ไลฟ์สไตล์</span>
+              <p>แจกรหัสลับ Haidilao บอกยังไงให้ได้ของฟรีกลับบ้าน</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="slide-second-desktop d-md-grid">
+       <div class="slide-second-item1"> 
+        <div class="w-100  ">
+          <a class="text-decoration-none text-white" href="">
+            <img src="assets/slide-img/slide-second/slide-second-img.svg" alt="">
+            <div class="slide-second-content position-relative ">
+              <p class="text-center m-0">“อัจฉริยะ” ร้อง ปปป. เอาผิด 2 นายพลคุมคดีแตงโม</p>
+              <span>ข่าว</span>
+            </div>
+          </a>
+        </div>
+       </div>
+       <div class="slide-second-item2">item2</div>
+       <div class="slide-second-item3">item3</div>
+       <div class="slide-second-item4">item4</div>
+       <div class="slide-second-item5">item5</div>
+       <div class="slide-second-item6">item6</div>
+    </div> -->
+
+    <div class="slide-third d-block d-lg-none">
+      <div class="slide-third-title  ">
+        <h3>ข่าวล่าสุด</h3>
+      </div>
+      <div class="owl-carousel  owl-theme owl-carousel-third ">
+        <div class="slide-third-bakground ">
+          <img src="assets/slide-img/slide-third/slide-third-img.png   " alt="">
+          <div class="ps-4 gap-3 slide-third-description">
+            <a class="text-decoration-none">ข่าว</a>
+            <p>พนักงานออฟฟิศรุ่นใหม่ ใช้เงินยังไงให้คุ้มและฉลาด</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="covid">
+      <div class="covid-title ">
+        <h3 class="text-white   text-center  ">สถานการณ์ COVID-19 ในประเทศไทย</h3>
+      </div>
+      <div class="covid-content p-4 d-grid text-white text-center">
+        <div class="covid-item1">
+          <p class="border-bottom ">ผู้ป่วยรายใหม่วันนี้</p>
+          <p class="fw-bold item6-lg-fs50">9,721</p>
+        </div>
+        <div class="covid-item2">
+          <p class="border-bottom">ผู้ป่วยยืนยันสะสม</p>
+          <p class="fw-bold item6-lg-fs40">4,281,536</p>
+        </div>
+        <div class="covid-item3">
+          <p class="border-bottom">หายป่วยแล้ว</p>
+          <p class="fw-bold item6-lg-fs40">4,134,191</p>
+        </div>
+        <div class="covid-item4 h-100">
+          <p class="border-bottom">รักษาอยู่ใน รพ.</p>
+          <p class="fw-bold item6-lg-fs34">118,567</p>
+        </div>
+        <div class="covid-item5 ">
+          <p class="border-bottom">เสียชีวิต</p>
+          <p class="fw-bold item6-lg-fs34">28,778</p>
+        </div>
+        <div class="covid-item6">
+          <div class="covid-item6-top">
+            <p class="border-bottom">ผู้รับวัคซีนรายวัน</p>
+            <p class="item6-lg-fs20">เข็มที่ 1</p>
+            <p class="item6-lg-fs25">23,082</p>
+          </div>
+          <div class="covid-item6-middle border-top border-bottom">
+            <div class="covid-item6-middle-content d-flex justify-content-center">
+              <div class="border-end">
+                <p class="item6-lg-fs20">เข็มที่ 2</p>
+                <p class="item6-lg-fs25">23,082</p>
+              </div>
+              <div>
+                <p class="item6-lg-fs20">เข็มที่ 3</p>
+                <p class="item6-lg-fs25">23,082</p>
+              </div>
+            </div>
+          </div>
+          <div class="covid-item6-bottom">
+            <p class="item6-lg-fs20">ผู้รับวัคซีนสะสม</p>
+            <p class="item6-lg-fs40 ">135,291,380</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <iframe width="320" height="620"  src="https://www.bangchak.co.th/th/oilprice/widget" frameborder="0"></iframe>
+
+
+    <div class="container">
+      <div class="lottery  p-2">
+        <div class="lottery-body position-relative">
+          <div class="lottery-header">
+            <div class="lottery-header-title d-flex justify-content-around text-center">
+              <div class="header-title-background">
+                <h1 class="mb-1 ">ผลสลากกินแบ่งรัฐบาล</h1>
+                <h4>ประจำวันที่ 2 พฤษภาคม 2565</h4>
+              </div>
+              <a class="lottery-header-check text-decoration-none " href="">ตรวจหวย</a>
+            </div>
+          </div>
+          <div class="row lottery-content text-center m-3 rounded-3">
+            <div class="col-6 p-0 lottery-content-left">
+              <div class="content-left-reward-top h-75 p-3 ">
+                <div class="d-flex justify-content-center align-items-center bg-white  h-100  rounded-3">
+                  <div>
+                    <span>รางวัลที่ 1</span>
+                    <h1 class="lottery-fontsize">658642</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="row content-left-reward-bottom h-25  text-white  ">
+                <span class="col-6 p-0 position-relative  ">เลขท้าย <br> 2 ตัว</span>
+                <h3 class="col-6 p-0 lottery-fontsize">09</h3>
+              </div>
+            </div>
+            <div class="col-6 p-0 bg-white lottery-content-right">
+              <div class="h-auto content-right-reward-top  ">
+                <div class="right-reward-top-first">
+                  <span>เลขหน้า 3 ตัว</span>
+                  <div class="d-flex justify-content-center ">
+                    <h5 class="lottery-fontsize">778</h5>
+                    <span class="separator "></span>
+                    <h5 class="lottery-fontsize">518</h5>
+                  </div>
+                </div>
+                <div class="right-reward-top-second ">
+                  <span>เลขท้าย 3 ตัว</span>
+                  <div class="d-flex justify-content-center ">
+                    <h5 class="lottery-fontsize">041</h5>
+                    <span class="separator"></span>
+                    <h5 class="lottery-fontsize">325</h5>
+                  </div>
+                </div>
+
+              </div>
+              <div class="h-auto  content-right-reward-bottom">
+                <span>รางวัลข้างเคียงรางวัลที่ 1 </span>
+                <div class="d-flex justify-content-center">
+                  <h3 class="lottery-fontsize">658641</h3>
+                  <span class="separator"></span>
+                  <h3 class="lottery-fontsize">658643</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spotlight mt-3">
+        <div class="spotlight-title text-white">
+          <h1>SPOTLIGHT</h1>
+        </div>
+        <div class="spotlight-content m-lg-3 d-flex flex-column flex-lg-row align-items-lg-start align-items-center">
+          <div class="spotlight-content-body ">
+            <div class="spotlight-content-image">
+              <img class="d-md-none" src="/assets/spotlight/spotlight-img-main.png" alt="">
+              <img class="d-none d-md-block " src="/assets/spotlight/main-img.png " alt="">
+            </div>
+            <div class="spotlight-content-description  pt-1 pb-1">
+              <p>สรุปดราม่า #หลวงพี่กาโตะ </p>
+              <p>โด่งดังเพราะคลิปคมแต่ต้องล่มเพราะคลิปเธอ</p>
+              <p>ทั่วไป</p>
+            </div>
+          </div>
+          <div class="spotlight-subcontent">
+            <div class="spotlight-subcontent-item ms-3 me-3 ">
+              <div class="subcontent-item-body mt-2 mb-2 d-flex">
+                <div class="subcontent-item-image">
+                  <a href=""><img src="/assets/spotlight/spotlight-subContent.svg" alt=""></a>
+                </div>
+                <div class="subcontent-item-descrition ps-2">
+                  <a class="text-decoration-none text-dark " href="">สรุปดราม่า จอห์นนี่ เดปป์
+                    ฟ้องหมิ่น แอมเบอร์ เฮิร์ด เส้นทางรักร้าวสู่รักฉาวในชั้นศาล</a><br>
+                  <span>บันเทิงสากล</span>
+
+                </div>
+              </div>
+            </div>
+            <div class="spotlight-subcontent-item ms-3 me-3 ">
+              <div class="subcontent-item-body mt-2 mb-2 d-flex">
+                <div class="subcontent-item-image">
+                  <a href=""><img src="/assets/spotlight/spotlight-subContent.svg" alt=""></a>
+                </div>
+                <div class="subcontent-item-descrition ps-2">
+                  <a class="text-decoration-none text-dark " href="">สรุปดราม่า จอห์นนี่ เดปป์
+                    ฟ้องหมิ่น แอมเบอร์ เฮิร์ด เส้นทางรักร้าวสู่รักฉาวในชั้นศาล</a><br>
+                  <span>บันเทิงสากล</span>
+
+                </div>
+              </div>
+            </div>
+            <div class="spotlight-subcontent-item ms-3 me-3 ">
+              <div class="subcontent-item-body mt-2 mb-2 d-flex">
+                <div class="subcontent-item-image">
+                  <a href=""><img src="/assets/spotlight/spotlight-subContent.svg" alt=""></a>
+                </div>
+                <div class="subcontent-item-descrition ps-2">
+                  <a class="text-decoration-none text-dark " href="">สรุปดราม่า จอห์นนี่ เดปป์
+                    ฟ้องหมิ่น แอมเบอร์ เฮิร์ด เส้นทางรักร้าวสู่รักฉาวในชั้นศาล</a><br>
+                  <span>บันเทิงสากล</span>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="spotlight-readall d-flex justify-content-end">
+          <a class="text-decoration-none " href="">ดูทั้งหมด</a>
+        </div>
+      </div>
+      <div class="row  abroad-finance">
+        <div class="col-md-6 abroad mt-5">
+          <div class="abroad-title  ">
+            <h1 class="d-flex flex-row  gap-2">ต่างประเทศ</h1>
+          </div>
+          <div class="abroad-content d-flex flex-column">
+            <img src="/assets/abroad-finance/abroad/abroad-img.png" alt="">
+            <h4 class="mt-1 mb-1 ">อียูเคาะแล้วคว่ำบาตรรัสเซียเพิ่มเลิกนำเข้าน้ำมันใน 6 เดือน</h4>
+            <span class="mb-1">อียูเคาะแล้ว คว่ำบาตรรัสเซียเพิ่ม เลิกนำเข้าน้ำมัน ใน 6 เดือน แบนธนาคารชั้นนำ
+              ห้ามกิจการวิทยุลกระจาย...</span>
+          </div>
+          <div class="row abroad-subcontent">
+            <div class="col-6 abroad-subcontent-item d-md-flex flex-md-column">
+              <a class="text-decoration-none  " href=""><img src="/assets/abroad-finance/abroad/abroad-img-sub.png"
+                  alt=""></a>
+              <a class="text-decoration-none text-dark " href="">สรุปคดีแตงโมรอบ 2
+                จากคดีคนตายสู่ศึกทนายที่ไม่มีใครยอม</a>
+            </div>
+            <div class="col-6 abroad-subcontent-item d-md-flex flex-md-column">
+              <a class="text-decoration-none  " href=""><img src="/assets/abroad-finance/abroad/abroad-img-sub.png"
+                  alt=""></a>
+              <a class="text-decoration-none text-dark " href="">สรุปคดีแตงโมรอบ 2
+                จากคดีคนตายสู่ศึกทนายที่ไม่มีใครยอม</a>
+            </div>
+            <div class="col-6 abroad-subcontent-item d-md-flex flex-md-column">
+              <a class="text-decoration-none  " href=""><img src="/assets/abroad-finance/abroad/abroad-img-sub.png"
+                  alt=""></a>
+              <a class="text-decoration-none text-dark " href="">สรุปคดีแตงโมรอบ 2
+                จากคดีคนตายสู่ศึกทนายที่ไม่มีใครยอม</a>
+            </div>
+            <div class="col-6 abroad-subcontent-item d-md-flex flex-md-column">
+              <a class="text-decoration-none  " href=""><img src="/assets/abroad-finance/abroad/abroad-img-sub.png"
+                  alt=""></a>
+              <a class="text-decoration-none text-dark " href="">สรุปคดีแตงโมรอบ 2
+                จากคดีคนตายสู่ศึกทนายที่ไม่มีใครยอม</a>
+            </div>
+          </div>
+          <div class="abroad-readmore d-flex justify-content-end">
+            <a href="">อ่านต่อ</a>
+          </div>
+        </div>
+        <div class="col-md-6 finance mt-5">
+          <div class="finance-title  ">
+            <h1 class="d-flex flex-row  gap-2">การเงิน</h1>
+          </div>
+          <div class="finance-content d-flex flex-column">
+            <img src="/assets/abroad-finance/finance/finance-img.png " alt="">
+            <h4 class="mt-1 mb-1 ">ที่ดินดิจิทัลคืออะไร ทำไมถึงมีคนทุ่มทุนเพื่อที่จะได้มา?</h4>
+            <span class="mb-1">"ที่ดินดิจิทัล" คืออะไร? ทำไมถึงมีแต่คนสนใจ?</span>
+          </div>
+          <div class="row finance-subcontent">
+            <div class="col-6 finance-subcontent-item d-md-flex flex-md-column">
+              <a class="text-decoration-none  " href=""><img src="/assets/abroad-finance/abroad/abroad-img-sub.png"
+                  alt=""></a>
+              <a class="text-decoration-none text-dark " href="">สรุปคดีแตงโมรอบ 2
+                จากคดีคนตายสู่ศึกทนายที่ไม่มีใครยอม</a>
+            </div>
+            <div class="col-6 finance-subcontent-item d-md-flex flex-md-column">
+              <a class="text-decoration-none  " href=""><img src="/assets/abroad-finance/abroad/abroad-img-sub.png"
+                  alt=""></a>
+              <a class="text-decoration-none text-dark " href="">สรุปคดีแตงโมรอบ 2
+                จากคดีคนตายสู่ศึกทนายที่ไม่มีใครยอม</a>
+            </div>
+            <div class="col-6 finance-subcontent-item d-md-flex flex-md-column">
+              <a class="text-decoration-none  " href=""><img src="/assets/abroad-finance/abroad/abroad-img-sub.png"
+                  alt=""></a>
+              <a class="text-decoration-none text-dark " href="">สรุปคดีแตงโมรอบ 2
+                จากคดีคนตายสู่ศึกทนายที่ไม่มีใครยอม</a>
+            </div>
+            <div class="col-6 finance-subcontent-item d-md-flex flex-md-column">
+              <a class="text-decoration-none  " href=""><img src="/assets/abroad-finance/abroad/abroad-img-sub.png"
+                  alt=""></a>
+              <a class="text-decoration-none text-dark " href="">สรุปคดีแตงโมรอบ 2
+                จากคดีคนตายสู่ศึกทนายที่ไม่มีใครยอม</a>
+            </div>
+          </div>
+          <div class="finance-readmore d-flex justify-content-end">
+            <a href="">อ่านต่อ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div
+        class="footer-body text-center  d-flex flex-column flex-md-row justify-content-md-around  align-items-md-center  p-3 gap-1">
+        <div class="footer-left d-flex flex-column">
+          <img class="m-auto " src="/assets/footer/footer-logo.png" alt=" ">
+          <span class="text-white  ">Independent News Network</span>
+        </div>
+        <div class="footer-middle text-white fw-light d-none d-md-block">
+          <span>ABOUT</span>
+          <span>|</span>
+          <span>CONTACT</span>
+        </div>
+        <div class="footer-right">
+          <span class="text-white fw-light ">FOLLOW US</span>
+          <ul class="list-unstyled d-flex justify-content-center mt-2 gap-2">
+            <li><a href=""><img src="/assets/footer/facebook.png" alt=""></a></li>
+            <li><a href=""><img src="/assets/footer/youtube.png" alt=""></a></li>
+            <li><a href=""><img src="/assets/footer/twitter.png" alt=""></a></li>
+            <li><a href=""><img src="/assets/footer/tiktok.png" alt=""></a></li>
+
+          </ul>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
 
 
 
 </body>
 
 </html>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 <script src="/app.js"></script>
